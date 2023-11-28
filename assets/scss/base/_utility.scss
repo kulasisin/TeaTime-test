@@ -1,0 +1,259 @@
+//Generate utilites for Font Size
+$utilities: map-merge($utilities,
+    ("font-size": map-merge(map-get($utilities, "font-size"),
+        (responsive: true,
+        )),
+    ));
+
+//Generate utilites for Font weight
+$utilities: map-merge($utilities,
+    ("font-weight": map-merge(map-get($utilities, "font-weight"),
+        (responsive: true,
+        )),
+    ));
+
+//Generate utilites for Cursor
+$utilities: map-merge($utilities,
+    ("cursor": (property: cursor,
+        values: auto default pointer wait text move help not-allowed),
+    ));
+
+//Generate utilites for Width
+$utilities: map-merge($utilities,
+    ("width": map-merge(map-get($utilities, "width"),
+        (responsive: true,
+          values: map-merge(map-get(map-get($utilities, "width"), "values"),
+            (60:60%,
+              80:80%,
+              85: 85%,
+              90: 90%),
+          ),
+        ),
+      ),
+    ));
+    
+//Generate utilites for background
+$utilities: map-merge(
+    $utilities,
+    (
+        "background-color":
+            map-merge(
+                map-get($utilities, "background-color"),
+                (
+                    responsive: true
+                )
+            )
+     )
+);
+
+.ms-170 {
+  margin-left: 170px;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-2 {
+  z-index: 2;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
+// "看更多" 連結的 CSS
+.see-more,
+.svg-hover path {
+  transition: .5s;
+
+  &:hover {
+    color: $gray-01 !important;
+
+    .svg-hover path {
+      fill: $gray-01 !important;
+    }
+  }
+
+  .modal-sm-mx12 {
+    margin-left: 12px;
+    margin-right: 12px;
+
+    @include media-breakpoint-up(sm) {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+}
+
+/* CUSTOM 圖片取代文字技巧 */
+.pictures-replace-text {
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* CUSTOM 圖片取代文字技巧 END*/
+
+/* CUSTOM weight、height */
+.height-400 {
+  height: 400px;
+}
+
+.height-618 {
+  height: 618px;
+}
+
+.width-32 {
+  height: 32px;
+}
+
+.max-width-1296 {
+  max-width: 1296px;
+}
+
+/* CUSTOM weight、height END */
+
+/*CUSTOM border-radius */
+.border-radius-16161640 {
+  border-radius: 16px 16px 16px 40px;
+}
+
+.border-radius-16164016 {
+  border-radius: 16px 16px 40px 16px;
+}
+
+.border-radius-32321616 {
+  border-radius: 32px 32px 16px 16px;
+}
+
+.border-radius-40401616 {
+  border-radius: 40px 40px 16px 16px;
+}
+
+.border-radius-64641616 {
+  border-radius: 64px 64px 16px 16px;
+}
+
+.border-radius-040400 {
+  border-radius: 0px 40px 40px 0px;
+}
+
+.border-radius-400040 {
+  border-radius: 40px 0px 0px 40px;
+}
+
+.border-radius-80804040 {
+  border-radius: 80px 80px 40px 40px;
+}
+
+.border-radius-010000 {
+  border-radius: 0px 100px 0px 0px;
+}
+
+@include media-breakpoint-up(md) {
+  .border-radius-md-80801616 {
+    border-radius: 80px 80px 16px 16px;
+  }
+
+  .border-radius-md-020000 {
+    border-radius: 0px 200px 0px 0px;
+  }
+}
+
+/* CUSTOM border-radius END*/
+
+/* CUSTOM 文字 */
+// 文字 陰影
+.custom-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.custom-shadow-025 {
+  background: linear-gradient(180deg, #FFF 0%, #FFF 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+// 文字 不斷行
+.word-break-keep-all {
+  word-break: keep-all;
+}
+
+//文字單行省略
+.single-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//文字雙行省略
+.doubleline-ellipsis { 
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+//文字三行省略
+.trippleline-ellipsis { 
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+/* CUSTOM 文字 END*/
+
+/* CUSTOM input form control */
+//input 點擊 focus 客製化
+.custom-form-focus:focus {
+  background-color: white;
+  color: $gray-01;
+  box-shadow: none;
+}
+
+/* CUSTOM input form END */
+
+/* CUSTOM item hover */
+.border-hover-line:hover {
+  border: 2px solid $line;
+}
+
+/* CUSTOM item hover END */
+
+/* CUSTOM transform */
+.transform-32-sm-48 {
+  transform: translateY(-48px);
+  margin-bottom: -32px;
+
+  @include media-breakpoint-down(sm) {
+    transform: translateY(-32px);
+    margin-bottom: -20px;
+  }
+}
+
+/* CUSTOM item hover END */
+
+/* CUSTOM line-clamp */
+.line-clamp-2 {
+  height: 3rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; //顯示行數
+  overflow: hidden;
+}
+
+/* CUSTOM item hover END */
+
+
+/* CUSTOM item hover END */
+
+.transition {
+  transition: all 1s;
+}
+
+  // textarea 取消預設樣式
+  .no-resize {
+    resize: none;
+  }

@@ -1,0 +1,63 @@
+<aside class="col-2 p-24 d-none d-lg-block ">
+    <div>
+        <!-- <img src="/assets/images/logo/logo-teatime.svg" alt="" class="h-100  "> -->
+        <a href="index.html" class="indexLogo"></a>
+    </div>
+
+    <ul class="mt-20 py-24 fs-20 fw-bolder gap-12">
+        <li class="d-flex align-items-center ">
+            <iconify-icon class="me-10" icon="pajamas:overview" style="color: #1e1e1e;" width="24"></iconify-icon>
+            <a href="overallSystem.html" class="memberSystem-a  text-gray-02">總覽</a>
+        </li>
+
+        </li>
+        <li class="mt-40 d-flex align-items-center "><iconify-icon class="me-10"
+                icon="material-symbols:order-approve-outline" style="color: #1e1e1e;" width="24"></iconify-icon><a
+                href="orderSystem.html" class="memberSystem-a  text-gray-02">訂單管理</a></li>
+        <li class="mt-40 d-flex align-items-center"><iconify-icon class="me-10" icon="mdi:vote" style="color: #1e1e1e;"
+                width="24"></iconify-icon><a href="voteSystem.html" class="memberSystem-a text-gray-02">投票管理</a></li>
+        <li class="mt-40 d-flex align-items-center"><iconify-icon class="me-10" icon="material-symbols:account-box"
+                style="color: #1e1e1e;" width="24"></iconify-icon><a href="memberInfo.html"
+                class="memberSystem-a text-gray-02">個人資料</a></li>
+    </ul>
+</aside>
+
+<script>
+    let currentPageURL = window.location.href;
+    let memberSystemPage = document.querySelectorAll(".memberSystem-a");
+    let activeIndex = -1;
+    switch (true) {
+        case currentPageURL.includes("overallSystem.html"):
+            activeIndex = 0;
+            break;
+        case currentPageURL.includes("orderSystem.html"):
+            activeIndex = 1;
+            break;
+        case currentPageURL.includes("voteSystem.html"):
+            activeIndex = 2;
+            break;
+        case currentPageURL.includes("memberInfo.html"):
+            activeIndex = 3;
+            break;
+    }
+    if (activeIndex!==-1){
+        memberSystemPage[activeIndex].classList.add("memberSystem-active")
+    }
+
+</script>
+<style>
+    .memberSystem-active {
+        color: black !important;
+    }
+
+    .indexLogo {
+        background-image: url(/assets/images/logo/logo-teatime.svg);
+        display: block;
+        text-indent: 101%;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 247px;
+        height: 40px;
+        background-size: cover;
+    }
+</style>

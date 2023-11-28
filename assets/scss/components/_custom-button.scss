@@ -1,0 +1,47 @@
+/* DEFAULT */
+.btn-brand-02 {
+    color: $brand-02;
+    transition: all 0.3s;
+}
+
+.btn-brand-03 {
+    background-color: $brand-03;
+    transition: all 0.3s;
+}
+
+.btn-brand-05 {
+    background-color: $brand-05;
+    transition: all 0.3s;
+}
+
+/* HOVER */
+.btn-hover-gray-04:hover{
+    background-color: $gray-04 !important;
+}
+
+.btn-hover-bg-1:hover {
+    background-color: $bg-1;
+}
+
+.btn-hover-bg-2:hover {  
+      background-color: $bg-2;
+}
+
+.btn-hover-brand-01:hover {
+    background-color: $brand-01;
+}
+
+.btn-hover-underline-brand-02:hover{
+    text-decoration: underline;
+    text-decoration-color: $brand-02;
+}
+
+.btn-active-brand-02 {
+    background-color: $brand-02 !important;
+    color: $white !important;
+}
+
+.btn-disable{
+    background-color: $gray-04;
+    color:$gray-03;
+}
